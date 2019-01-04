@@ -1,6 +1,7 @@
 :colorscheme desert
 :set number
 :set cursorline
+:syntax on
 
 "Seach options enable highlighting and incremental search
 :set hlsearch incsearch

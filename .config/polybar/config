@@ -1,0 +1,66 @@
+[bar/base]
+
+monitor = eDP1
+
+font-0 = "Gotham Thin:pixelsize=15;2"
+
+height=25
+offset=x = 0
+offset-y = 0
+bottom = false
+
+padding = 5
+module-margin = 10
+
+modules-left   = cpu
+modules-center = eth
+modules-right  = datetime battery
+
+[module/datetime]
+type = internal/date
+interval = 1.0
+
+date = "%A %b %d, %Y"
+time = "%I:%M:%S  %p"
+
+label = "%time%      %date%"
+
+[module/battery]
+type=internal/battery
+battery = BAT1
+adapter = ACAD
+
+format-charging = <label-charging>
+label-charging = Charging %percentage%% - %time% to full
+
+format-discarging  = <label-discharging>
+label-discharging = %percentage%% - %time% remaining
+
+poll-interval = 5
+time-format = %H:%M
+
+
+[module/cpu]
+type=internal/cpu
+interval = 0.5
+label = CPU: %percentage%%
+
+[module/eth]
+type=internal/network
+interface = wlp108s0
+interval=3
+pinginterval =1
+
+format-conneted = <label-connected>
+label-connected = %essid% %local_ip% %downspeed%
+
+label-disconnected = not connected
+label-disconnected-foreground = $66ffffff
+
+
+#[module/pulseaudio]
+#type = internal/pulseaudio
+#sink=alsa_output.pci-0000_00_1f.3.analog-stereo
+#use-ui-max = true
+#interval=1
+#format-volue = <ramp-volue> <label-volume>
