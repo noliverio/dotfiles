@@ -4,7 +4,7 @@ if [$1 == "desktop"]
 then
     pacman -Syu
     ln -s ~/.dotfiles/.config ~/.config
-elif [$1 == "remote_server"]
+elif [$1 == "interactive_server"]
 then
     sudo yum update -y
 fi

@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 PS1='┌[\u@\h] - [~] - [\d, \A] \n└[\$]> '
 
 # Call local credentials file
-if [ -f ./creds ]; then
+if [ -f ~/.creds ]; then
     . ~/.creds
 fi
 
