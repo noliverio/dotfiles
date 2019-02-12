@@ -15,3 +15,6 @@
 :set foldlevelstart=2
 autocmd BufWritePre *.* mkview!
 autocmd BufRead *.* silent loadview
+
+" Enable filetype plugin for vim-go
+:filetype plugin on

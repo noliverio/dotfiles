@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-PS1='┌[\u@\h] - [~] - [\d, \A] \n└[\$]> '
+PS1='┌[\u@\h] - [\w] - [\d, \A] \n└[\$]> '
 
 # User defined functions
 
@@ -17,6 +17,7 @@ _trash() {
 # User defined aliases
 
 alias rm='_trash'
+alias woman='man'
 
 
 # User defined exports
@@ -24,4 +25,4 @@ alias rm='_trash'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/go/bin/
