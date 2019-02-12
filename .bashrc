@@ -8,6 +8,11 @@
 alias ls='ls --color=auto'
 PS1='┌[\u@\h] - [\w] - [\d, \A] \n└[\$]> '
 
+# Call local credentials file
+if [ -f ~/.creds ]; then
+    . ~/.creds
+fi
+
 # User defined functions
 
 _trash() {
@@ -26,3 +31,4 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 export PATH=$PATH:/usr/local/go/bin:~/go/bin/
+
