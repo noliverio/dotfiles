@@ -18,6 +18,9 @@
 autocmd BufWritePre *.* mkview!
 autocmd BufRead *.* silent loadview
 
+" Enable filetype based plugins
+:filetype plugin on
+
 "Vim-Terraform specific settings. 
 let g:terraform_align=1
 let g:terraform_fold_sections=1
