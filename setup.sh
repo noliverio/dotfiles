@@ -1,17 +1,21 @@
 #!/usr/bin/bash
 
-if [$1 == "desktop"]
+if [ $1 == "desktop" ]
 then
     pacman -Syu
+    pacman -Sy vim
     ln -s ~/.dotfiles/.config ~/.config
-elif [$1 == "interactive_server"]
+elif [ $1 == "interactive_server" ]
 then
     sudo yum update -y
+    rpm -Uvh http://mirror.ghettoforge.org/distributions/gf/gf-release-latest.gf.el7.noarch.rpm
+    rpm --import http://mirror.ghettoforge.org/distributions/gf/RPM-GPG-KEY-gf.el7
+    yum -y remove vim-minimal vim-common vim-enhanced
+    yum -y --enablerepo=gf-plus install vim-enhanced
 fi
 
 # Stuff I will want on any machine
 # Set up vim and install vim plugins.
-yum install -y vim
 rm ~/.vimrc
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 mkdir -p ~/.vim/view
